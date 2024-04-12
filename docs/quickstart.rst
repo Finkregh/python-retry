@@ -10,11 +10,11 @@ Using the Python retry decorator
 
     >>> from python_retry import retry
     >>> import pytest
-    >>>
+
     >>> @retry()
     ... def div(num: int, den: int):
     ...     return num/den
-    >>>
+    
     >>> div(1, 0)
 
 
@@ -25,7 +25,7 @@ Advanced use
 
     >>> import logging
     >>> logger = logging.getLogger("foo")
-    >>>
+
     >>> @retry(
     ...     retry_on=(ZeroDivisionError,),
     ...     max_retries=2,
@@ -35,5 +35,5 @@ Advanced use
     ... )
     ... def div(num: int, den: int):
     ...     return num / den
-    >>>
+
     >>> div(1, 0)
